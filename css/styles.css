@@ -1,5 +1,8 @@
 /* index.html STYLES START*/
 
+html {
+  box-sizing: border-box;
+}
 :root {
   --brand-color: #4d5ae5;
   --pressed-state: #404bbf;
@@ -17,14 +20,43 @@
 }
 body {
   background-color: var(--body-background);
-  font-family: var(--main-font), sans-serif;
-  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   color: var(--hero-background);
-  letter-spacing: normal;
+  margin: 0;
 }
-ul {
+/* RESET START */
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lists styling */
+
+li {
   list-style: none;
+  padding: 0;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+/* RESET END */
+
 .hidden {
   position: absolute;
   width: 1px;
@@ -38,25 +70,39 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-/* HEADER(NAV) STYLES */
 
+.container {
+  /* outline: 2px solid tomato; */
+  width: 1158px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* HEADER(NAV) STYLES */
+header {
+  display: block;
+  border-bottom: solid 1px var(--cornflower);
+}
 .main-nav {
   display: flex;
-  margin: ;
-  font-family: var(--main-font);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  /* identical to box height, or 150% */
-  letter-spacing: 0.02em;
+  align-items: center;
 }
 .nav-list {
   display: flex;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 40px;
 }
-.auth {
-  display: flex;
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
+
 .logo {
+  margin-right: 76px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -67,36 +113,49 @@ ul {
   color: var(--brand-color);
 }
 
-.auth {
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--main-text-color);
-}
 /* LINKS STYLES */
 a {
   text-decoration: none;
   color: var(--dark-theme);
 }
 
+.auth {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.auth-item:last-child {
+  margin-left: 40px;
+}
+.auth-link {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--main-text-color);
+}
 .nav-link:hover,
 .nav-link:focus,
-.nav-link::after,
-.info-tel:hover,
-.info-tel::after,
-.info-mail:hover,
-.info-mail:after {
+.auth-link:hover,
+.auth-link:focus {
   color: var(--pressed-state);
 }
 
 /* SOLUTIONS STYLES */
 
 .solutions {
-  background-color: #2e2f42;
+  background-color: var(--dark-theme);
+  text-align: center;
+  padding-top: 188px;
+  padding-bottom: 188px;
 }
-
+.hero-container {
+}
 .solutions-title {
-  font-family: var(--main-font);
+  width: 496px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.2;
@@ -126,7 +185,10 @@ button:focus {
   background: var(--pressed-state);
 }
 /* AIM STYLES */
-
+.aim {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 .aim-title {
   font-weight: 500;
   font-size: 20px;
@@ -135,90 +197,85 @@ button:focus {
   color: var(--dark-theme);
 }
 .aim-desc {
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
 }
-/* activities STYLES */
 
+.features-list {
+  display: flex;
+}
+
+.features-list .features-item:not(:last-child) {
+  margin-right: 24px;
+}
+/* activities STYLES */
+.activities {
+  margin-bottom: 120px;
+}
 .activities-title {
+  margin-top: 0;
+  margin-bottom: 72px;
   text-align: center;
-  font-family: var(--main-font);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark-theme);
 }
-
-img {
-  display: block;
+.activities-list {
+  display: flex;
+}
+.activities-list .activities-item {
+  margin-right: 24px;
 }
 /* TEAM SECTION STYLES */
 
 .team {
   background: var(--light-background);
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
-
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+}
 .team-title {
-  font-family: var(--main-font);
+  margin-top: 0;
+  margin-bottom: 72px;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.5;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--dark-theme);
   text-align: center;
 }
-
+.team-members .team-member:not(:last-child) {
+  margin-right: 24px;
+}
 .team-member {
   background: var(--body-background);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
-  width: 264px;
 }
 .team-name {
-  padding: 32px 62px 0;
-  height: 24px;
-
-  /* Header 3 */
-
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
-  /* identical to box height, or 120% */
-
   text-align: center;
   letter-spacing: 0.02em;
-
-  /* NAVY BLUE */
-
   color: var(--dark-theme);
 }
 
 .team-desc {
-  padding: 8px 60px 32px 60px;
-  width: 148px;
-  height: 24px;
-
-  /* Body */
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   /* identical to box height, or 150% */
 
   text-align: center;
   letter-spacing: 0.02em;
-
-  /* SLATE */
-
   color: var(--main-text-color);
 }
 
@@ -226,12 +283,12 @@ img {
 
 .footer {
   background: var(--dark-theme);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .footer > .logo {
-  color: var(--body-background);
-  width: 44px;
-  height: 22px;
+  width: 76px;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
@@ -241,14 +298,14 @@ img {
 }
 
 .footer-desc {
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--cornflower);
+  width: 264px;
 }
 
 /* portfolio.html STYLES START*/
+
 .header-portfolio {
   border-bottom: 1px solid var(--accent);
 }
@@ -275,6 +332,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--brand-color);
+  padding: 12px 24px;
 }
 .btn:hover,
 .btn:focus {
@@ -283,18 +341,10 @@ img {
 }
 
 .project-card {
-  justify-content: left;
-  width: 359px;
-  height: 420px;
   background: var(--body-background);
-  border: 1px solid var(--cornflower);
 }
 
 .project-card-title {
-  width: 290px;
-  height: 24px;
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
@@ -303,9 +353,6 @@ img {
 }
 
 .project-card-desc {
-  font-family: var(--main-font);
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
