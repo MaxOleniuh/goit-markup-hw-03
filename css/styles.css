@@ -40,7 +40,7 @@ h6 {
 }
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -71,11 +71,11 @@ ul {
 /* container  */
 .container {
   /* outline: 2px solid tomato; */
-  width: 1158px;
+  width: 1168px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 /* HEADER(NAV) STYLES */
 header {
@@ -88,15 +88,21 @@ header {
 }
 .nav-list {
   display: flex;
-  padding-top: 24px;
-  padding-bottom: 24px;
   gap: 40px;
 }
+
 .nav-link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+.nav-item:last-child {
+  margin-right: 100px;
 }
 /* LOGO */
 .logo {
@@ -115,19 +121,20 @@ header {
 a {
   text-decoration: none;
   color: var(--dark-theme);
+  font-style: normal;
 }
-
+.main-address {
+  margin-left: auto;
+}
 .auth {
   display: flex;
-  align-items: center;
-  margin-left: auto;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 .auth-item:last-child {
   margin-left: 40px;
 }
 .auth-link {
+  padding-top: 24px;
+  padding-bottom: 24px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
@@ -233,9 +240,8 @@ a {
 .team-card {
   padding-top: 32px;
   padding-bottom: 32px;
-  background: var(--body-background);
 }
-.team-member .team-member {
+.team-member {
   background: var(--body-background);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -294,11 +300,13 @@ a {
 }
 
 /* portfolio.html STYLES START*/
-
+.examples {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
 .filter-list {
   display: flex;
   justify-content: center;
-  padding-top: 96px;
   margin-bottom: 70px;
   font-family: var(--main-font);
   font-style: normal;
@@ -357,7 +365,6 @@ button:focus {
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 24px;
-  margin-bottom: 120px;
 }
 .project-card {
   border: 1px solid var(--cornflower);
