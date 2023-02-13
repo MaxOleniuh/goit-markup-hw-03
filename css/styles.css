@@ -185,6 +185,9 @@ a {
 .features-list .features-item:not(:last-child) {
   margin-right: 24px;
 }
+.features-item {
+  width: 264px;
+}
 /* Activities STYLES */
 .activities {
   margin-bottom: 120px;
